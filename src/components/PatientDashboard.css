@@ -1,0 +1,442 @@
+.patient-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.patient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.patient-welcome {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-emerald {
+  color: var(--primary-emerald);
+}
+
+.patient-welcome h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.patient-welcome p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Scorecard Grid */
+.scorecard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.scorecard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+}
+
+.scorecard-icon {
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.scorecard-icon.cyan {
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--primary-cyan);
+}
+
+.scorecard-icon.purple {
+  background: rgba(194, 65, 12, 0.08);
+  color: var(--primary-purple);
+}
+
+.scorecard-icon.emerald {
+  background: rgba(21, 128, 61, 0.08);
+  color: var(--primary-emerald);
+}
+
+.scorecard-icon.green {
+  background: rgba(21, 128, 61, 0.08);
+  color: var(--primary-emerald);
+}
+
+.scorecard-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.scorecard-info .value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+.scorecard-info .label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Main Dashboard Panel Layout */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.panel-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.main-left, .main-right {
+  padding: 24px;
+}
+
+.reports-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.report-card {
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.report-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.type-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-emerald);
+  background: rgba(21, 128, 61, 0.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.report-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.report-card .summary {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.report-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+}
+
+.report-card-footer .date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.download-btn:hover {
+  background: rgba(21, 128, 61, 0.08);
+  border-color: var(--primary-emerald);
+  color: var(--text-primary);
+}
+
+/* Medication Checklist Tracker */
+.tracker-tip {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.meds-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.med-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+}
+
+.med-checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 2px;
+}
+
+.checkbox-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border-radius: 9999px;
+}
+
+.checkbox-btn:hover {
+  color: var(--primary-emerald);
+  transform: scale(1.1);
+}
+
+.checkbox-btn.checked {
+  color: var(--primary-emerald);
+  animation: checkboxPop 0.3s ease-in-out;
+}
+
+@keyframes checkboxPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+.med-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-grow: 1;
+}
+
+.med-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.med-title-row h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.dosage-pill {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-purple);
+  background: rgba(194, 65, 12, 0.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.icon-purple {
+  color: var(--primary-purple);
+}
+
+.med-info p {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.med-info .frequency {
+  color: var(--text-primary);
+}
+
+.med-info .instructions {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.med-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 8px;
+}
+
+.compliance-badge {
+  color: var(--primary-emerald);
+  font-weight: 600;
+}
+
+/* Modal Overlay styling */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(65, 59, 45, 0.3);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  max-width: 600px;
+  width: 100%;
+  padding: 32px;
+  position: relative;
+  background: #ffffff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 9999px;
+  transition: var(--transition-smooth);
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.modal-header h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.modal-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.section-block h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.summary-callout {
+  background: rgba(15, 118, 110, 0.05);
+  border-left: 3px solid var(--primary-cyan);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.report-markdown {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.report-markdown p {
+  margin-bottom: 10px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.empty-panel {
+  text-align: center;
+  padding: 48px 24px;
+  color: var(--text-secondary);
+  border: 1.5px dashed var(--border-color);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 992px) {
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .patient-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .scorecard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

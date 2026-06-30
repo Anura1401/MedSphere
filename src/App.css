@@ -1,0 +1,30 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main-content {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: fadeInApp 0.3s ease-out forwards;
+}
+
+/* Ensure modal dialogs stack above the sticky navbar */
+body:has(.modal-overlay, .modal-backdrop) .app-main-content {
+  position: relative;
+  z-index: 1200;
+}
+
+@keyframes fadeInApp {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .app-main-content {
+    padding-bottom: 24px;
+  }
+}
